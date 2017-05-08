@@ -101,7 +101,7 @@ height= 0.10,
 wrapWidth=2 )
 
 
-response_keys1 = visual.TextStim(win, 
+response_keys = visual.TextStim(win, 
 '                                    End of block. \n'
 '\n'
 ' During the next block please use the following response keys: \n'
@@ -118,22 +118,6 @@ alignVert='center',
 height= 0.10,
 wrapWidth=2 )
 
-response_keys2 = visual.TextStim(win, 
-'                                    End of block. \n'
-'\n'
-' During the next block please use the following response keys: \n'
-'\n'
-'                         P if the object was present \n'
-'                         Q if the object was absent \n'
-'                    SPACEBAR when you hear a sound'
-'\n'
-'\n'
-'\n'
-'              Press SPACEBAR to begin  the next block.',
-alignHoriz='center',
-alignVert='center',
-height= 0.10,
-wrapWidth=2 )
 
 #END OF EXPERIMENT MESSAGE
 end_of_exp = visual.TextStim(win, 
@@ -223,11 +207,11 @@ event.waitKeys()
 
 for stimulus in range(len(my_dict)):
     if i == 120:
-        response_keys1.draw()
+        response_keys.draw()
         win.flip()
         event.waitKeys()
     if i == 240 or i == 360:
-        response_keys2.draw()
+        response_keys.draw()
         win.flip()
         event.waitKeys()
     stopwatch = core.Clock()
