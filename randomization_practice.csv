@@ -1,0 +1,49 @@
+,Cat.1,Cat.2,Cat.3,Cat.4,Cat.5,TS,Load,question,present_absent,trial_type
+2008_000202.jpg, person, chair, bottle, tvmonitor,,34.6330560906,high, bottle,Target Present,Normal
+2008_000226.jpg, person, car,,,,38.3289361592,high, sofa,Target Absent,Normal
+2008_000421.jpg, person, bottle, sofa,,,28.876320236,high, bird,Target Absent,Critical
+2008_000619.jpg, car, cat,,,,33.4621847905,high, boat,Target Absent,Critical
+2008_000798.jpg, bird,,,,,29.5945978863,high, bird,Target Present,Critical
+2008_001167.jpg, person, boat,,,,30.2746513135,high, car,Target Absent,Normal
+2008_002026.jpg, pottedplant, sofa, chair,,,35.7113985277,high, pottedplant,Target Present,Critical
+2008_002471.jpg, bird,,,,,20.7997623266,low, horse,Target Absent,Normal
+2008_002835.jpg, person, horse,,,,31.8426605842,high, dog,Target Absent,Normal
+2008_003380.jpg, person, horse,,,,30.989811996,high, aeroplane,Target Absent,Critical
+2008_005600.jpg, person, cat,,,,30.2265163794,high, sofa,Target Absent,Normal
+2008_006837.jpg, chair, dog, diningtable,,,18.2062639009,low, aeroplane,Target Absent,Normal
+2008_006870.jpg, person, dog,,,,30.6573416004,high, pottedplant,Target Absent,Normal
+2008_006921.jpg, car,,,,,18.4145038512,low, aeroplane,Target Absent,Critical
+2008_007913.jpg, person, cat,,,,32.265109083,high, cat,Target Present,Normal
+2008_008083.jpg, person, boat,,,,18.6424504286,low, person,Target Present,Critical
+2008_008357.jpg, person, bicycle, car,,,32.1086348624,high, person,Target Present,Normal
+2008_008533.jpg, horse,,,,,19.2079563963,low, horse,Target Present,Critical
+2008_008578.jpg, sofa, dog,,,,33.9445254118,high, sofa,Target Present,Normal
+2009_000087.jpg, sofa,,,,,19.8923896955,low, pottedplant,Target Absent,Normal
+2009_000150.jpg, cat,,,,,21.14034595,low, car,Target Absent,Critical
+2009_001052.jpg, dog,,,,,21.229223756,low, cat,Target Absent,Normal
+2009_001406.jpg, person, boat,,,,19.9016168923,low, bottle,Target Absent,Critical
+2009_001484.jpg, cat,,,,,17.5107438386,low, cat,Target Present,Normal
+2009_001611.jpg, person, chair, dog,,,31.5347707622,high, chair,Target Present,Normal
+2009_002605.jpg, dog,,,,,19.3330940368,low, sofa,Target Absent,Normal
+2009_003323.jpg, person, horse,,,,28.6395964811,high, horse,Target Present,Normal
+2009_003835.jpg, sofa, chair, diningtable,,,33.190296337,high, boat,Target Absent,Critical
+2009_004674.jpg, sofa, chair, person,,,33.1855902535,high, bottle,Target Absent,Normal
+2009_004784.jpg, person, chair,,,,32.9462674218,high, dog,Target Absent,Normal
+2009_005190.jpg, bottle,,,,,17.955144113,low, bottle,Target Present,Normal
+2010_000198.jpg, car,,,,,16.8829311519,low, car,Target Present,Normal
+2010_000216.jpg, dog,,,,,19.3619371673,low, dog,Target Present,Normal
+2010_000295.jpg, aeroplane,,,,,18.6476278154,low, aeroplane,Target Present,Normal
+2010_000811.jpg, dog,,,,,18.0450356506,low, sofa,Target Absent,Normal
+2010_000918.jpg, bird,,,,,19.8862784792,low, bird,Target Present,Normal
+2010_001220.jpg, car,,,,,17.3271340324,low, cat,Target Absent,Normal
+2010_001594.jpg, boat,,,,,19.0489746161,low, boat,Target Present,Critical
+2010_001829.jpg, horse,,,,,19.2344013367,low, bottle,Target Absent,Critical
+2010_002127.jpg, person, bottle, car,,,34.3131610413,high, chair,Target Absent,Normal
+2010_002775.jpg, dog,,,,,29.7778405817,high, dog,Target Present,Critical
+2010_005054.jpg, tvmonitor, sofa,,,,20.2162635229,low, sofa,Target Present,Normal
+2010_005718.jpg, car, aeroplane,,,,32.2245207666,high, aeroplane,Target Present,Normal
+2010_005997.jpg, car, motorbike, person,,,28.7440649366,high, car,Target Present,Critical
+2011_000824.jpg, cat,,,,,31.7798588195,high, chair,Target Absent,Normal
+2011_001005.jpg, pottedplant, sofa,,,,18.9677226722,low, pottedplant,Target Present,Critical
+2011_001991.jpg, boat,,,,,34.0471469053,high, boat,Target Present,Normal
+2011_002038.jpg, chair,,,,,19.161514973,low, chair,Target Present,Normal

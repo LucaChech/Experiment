@@ -1,0 +1,9 @@
+,Cat.1,Cat.2,Cat.3,Cat.4,Cat.5,TS,Load,question,present_absent,trial_type
+2008_000015.jpg, bottle,,,,,31.53972,high, bottle,Target Present,Normal
+2008_000033.jpg, aeroplane,,,,,16.99742334,low, aeroplane,Target Present,Normal
+2008_000089.jpg, chair,,,,,14.26755783,low, horse,Target Absent,Normal
+2008_000189.jpg, person, car,,,,18.39087834,low, boat,Target Absent,Normal
+2008_000192.jpg, bird,,,,,29.17631149,high, bird,Target Present,Normal
+2008_000196.jpg, pottedplant, bicycle, bottle, cat,,35.35378443,high, car,Target Absent,Critical
+2008_000202.jpg, person, chair, bottle, tvmonitor,,34.63305609,high, dog,Target Absent,Critical
+2008_000536.jpg, cat,,,,,16.53047464,low, cat,Target Present,Critical

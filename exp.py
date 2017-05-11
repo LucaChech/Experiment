@@ -24,10 +24,7 @@ from pdb import set_trace
 
 
 #RECREATING exp_dict
-
-#df = pd.DataFrame.from_csv('C:/Users/nilli lab/Desktop/Luca Exp/jupyter exp/randomization_short.csv')
-df = pd.DataFrame.from_csv('C:/Users/luca.chech.16/Desktop/jupyter exp/randomization.csv')
-
+df = pd.DataFrame.from_csv('E:/OneDrive - University College London/gitRepos/Experiment/randomization.csv')
 df.reset_index(drop=False,) #inplace = 'True')
 image_names = df.index.tolist()
 cat1 = df['Cat.1'].tolist()
@@ -41,8 +38,8 @@ question = df['question'].tolist()
 trial_type = df['present_absent'].tolist()
 critical = df['trial_type'].tolist()
 my_dict ={z[0]:list(z[1:]) for z in zip(image_names,cat1,cat2,cat3,cat4,cat5,ts,load,question,trial_type,critical)}
-
 random.shuffle(image_names)
+
 
 # DEFINING BLOCKS
 low_present_normal = []
@@ -143,7 +140,7 @@ random.shuffle(low_one)
 random.shuffle(low_two)
 random.shuffle(high_one)
 random.shuffle(high_two)
-
+#----------------------------------------------------------------------------------------------------
 # Store info about the experiment session
 expName = 'participant info'  # from the Builder filename that created this script
 expInfo = {u'session': u'001', u'participant': u''}
@@ -151,9 +148,8 @@ dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False: core.quit()  # user pressed cancel
 expInfo['date'] = data.getDateStr()  # add a simple timestamp
 expInfo['expName'] = expName
-
+#----------------------------------------------------------------------------------------------------
 # CREATING TRIAL OBJECTS
-
 #WINDOW
 win = visual.Window(size=(1920, 1080), fullscr=True, screen=0, allowGUI=False, allowStencil=False,
     monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
@@ -202,23 +198,16 @@ wrapWidth=2 )
 
 
 response_keys = visual.TextStim(win, 
-'                                    End of block. \n'
-'\n'
-' During the next block please use the following response keys: \n'
-'\n'
-'                         Q if the object was present \n'
-'                         P if the object was absent \n'
-'                    SPACEBAR when you hear a sound'
+'                      End of block. \n'
 '\n'
 '\n'
 '\n'
-'              Press SPACEBAR to begin  the next block.',
+'\n'
+'Press SPACEBAR to begin  the next block.',
 alignHoriz='center',
 alignVert='center',
 height= 0.10,
 wrapWidth=2 )
-
-
 #END OF EXPERIMENT MESSAGE
 end_of_exp = visual.TextStim(win, 
 'The experiment is over.\n'
@@ -229,10 +218,10 @@ end_of_exp = visual.TextStim(win,
 height=0.12)
 
 #SOUND
-tone1 = sound.Sound('C:/Users/luca.chech.16/Desktop/final/tonesUpdated2/Luca/tones/Subject 666/Tone 1.wav', secs=0.05)
-tone2 = sound.Sound('C:/Users/luca.chech.16/Desktop/final/tonesUpdated2/Luca/tones/Subject 666/Tone 2.wav', secs=0.05)
-tone3 = sound.Sound('C:/Users/luca.chech.16/Desktop/final/tonesUpdated2/Luca/tones/Subject 666/Tone 3.wav', secs=0.05)
-tone4 = sound.Sound('C:/Users/luca.chech.16/Desktop/final/tonesUpdated2/Luca/tones/Subject 666/Tone 4.wav', secs=0.05)
+tone1 = sound.Sound('E:/OneDrive - University College London/gitRepos/Experiment/tonesUpdated2/Luca/tones/Subject 555'+'.1/PureTone_F500_t50.wav', secs=0.05)
+tone2 = sound.Sound('E:/OneDrive - University College London/gitRepos/Experiment/tonesUpdated2/Luca/tones/Subject 555'+'.2/PureTone_F1000_t50.wav', secs=0.05)
+tone3 = sound.Sound('E:/OneDrive - University College London/gitRepos/Experiment/tonesUpdated2/Luca/tones/Subject 555'+'.3/PureTone_F1500_t50.wav', secs=0.05)
+tone4 = sound.Sound('E:/OneDrive - University College London/gitRepos/Experiment/tonesUpdated2/Luca/tones/Subject 555'+'.4/PureTone_F2000_t50.wav', secs=0.05)
 
 sound_onset = [0.050] * 4 + [0.100] * 4 + [0.150] * 4 + [0.200] * 4 + [0.250] * 4
 sound_Hz = ['tone1'] * 5 + ['tone2'] * 5 + ['tone3'] * 5 + ['tone4'] * 5
@@ -240,9 +229,30 @@ random.shuffle(sound_onset)
 random.shuffle(sound_Hz)
 onset_counter = 0
 hz_counter = 0
+#-------------------------------------------------------------------------------------------------------------------------
+#CONSTANTS
+response = []
+reaction_t = []
+mypath = 'E:/OneDrive - University College London/gitRepos/Experiment/images/'
+absent_question = []
+stopwatch = core.Clock()
+i = 0
+Instructions_screen_1.draw()
+win.flip()
+event.waitKeys(keyList=['space'])
+Instructions_screen_2.draw()
+win.flip()
+event.waitKeys()
+#---------------------------------
+block_dict = {}
+block_dict['high_one'] = high_one
+block_dict['high_two'] = high_two
+block_dict['low_one'] = low_one
+block_dict['low_two'] = low_two
 
+
+#-------------------------------------------------------------------------------------------------------------------------
 stimulus = 0
-print sound_onset, sound_Hz
 def handle_trial(play, block_name):
      global i
      global stimulus
@@ -271,10 +281,8 @@ def handle_trial(play, block_name):
      stopwatch.reset()
      core.wait(1, hogCPUperiod=1)
      lista = event.getKeys(keyList=['space'], timeStamped=stopwatch)
-     #print lista
      my_dict[block[stimulus]].append(lista)
      name=my_dict[block[stimulus]][-4]
-     #print name
      if 'pottedplant' in name:
          search_text = visual.TextStim(win, 'Was there a plant ?',
      wrapWidth=2,
@@ -308,34 +316,17 @@ def handle_trial(play, block_name):
         
      my_dict[block[stimulus]].append(keys)
      my_dict[block[stimulus]].append(rt_space)
+     my_dict[block[stimulus]].append(sound_onset)
+     my_dict[block[stimulus]].append(sound_Hz)
 
      i = i + 1
      my_dict[block[stimulus]].append(i)
      stopwatch.reset()
 
 
-#CONSTANTS
-categories = [' bottle', ' horse', ' pottedplant', ' dog', ' cat', ' person', ' aeroplane', ' car', ' chair', ' sofa', ' bird', ' boat']
-response = []
-reaction_t = []
-#mypath = 'C:/Users/nilli lab/Desktop/Luca Exp/jupyter exp/images/'
-mypath = 'C:/Users/luca.chech.16/Desktop/jupyter exp/images/'
-absent_question = []
-stopwatch = core.Clock()
-i = 0
-Instructions_screen_1.draw()
-win.flip()
-event.waitKeys(keyList=['space'])
-Instructions_screen_2.draw()
-win.flip()
-event.waitKeys()
 
-block_dict = {}
-block_dict['high_one'] = high_one
-block_dict['high_two'] = high_two
-block_dict['low_one'] = low_one
-block_dict['low_two'] = low_two
 def block_handler(block_name):
+    
     global stimulus
     global onset_counter
     global hz_counter
@@ -366,20 +357,16 @@ block_handler('low_one')
 block_handler('high_one')
 block_handler('high_two')
 block_handler('low_two')
-
-
-
-
+#----------------------------------
 end_of_exp.draw()
 win.flip()
 event.waitKeys()
-
+#----------------------------------
 
 ### SAVING .CSV
 df = pd.DataFrame(my_dict) 
 df = df.T
 df.reset_index(inplace=True)
-df.columns = ['Image Name','Cat. 1', 'Cat. 2','Cat. 3','Cat. 4','Cat. 5','True Skill Rating', 'Load','To be asked', 'Trial Type','Audio','RT to TO', 'RT VS', 'RT to TO','Trial N.']
-
+df.columns = ['Image Name','Cat. 1', 'Cat. 2','Cat. 3','Cat. 4','Cat. 5','True Skill Rating', 'Load','To be asked', 'Trial Type','Audio','RT to TO', 'RT VS', 'RT to TO','Trial N.','Tone Onset','Tone Hz']
 df.to_csv('Participant_'+expInfo['participant']+'Session_'+expInfo['session']+'.csv')
 
